@@ -4,6 +4,7 @@ import { ValidationPipe } from '@nestjs/common';
 import { Logger } from 'nestjs-pino';
 
 async function bootstrap() {
+  console.log('Console log from a container.');
   const app = await NestFactory.create(ReservationsModule);
   app.useGlobalPipes(
     new ValidationPipe({
