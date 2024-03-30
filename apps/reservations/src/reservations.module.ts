@@ -8,7 +8,7 @@ import {
   ReservationSchema,
 } from './models/reservation.schema';
 import { ConfigModule } from '@nestjs/config';
-import * as Joi from 'Joi';
+import * as Joi from 'joi';
 
 @Module({
   imports: [
