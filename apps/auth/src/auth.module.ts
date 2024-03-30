@@ -4,9 +4,9 @@ import { AuthService } from './auth.service';
 import { UsersModule } from './users/users.module';
 import { LoggerModule } from '@app/common';
 import { JwtModule } from '@nestjs/jwt';
+import { LocalStrategy } from './strategies/local.strategy';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import * as Joi from 'Joi';
-import { LocalStrategy } from './strategies/local.strategy';
 
 @Module({
   imports: [
