@@ -4,6 +4,8 @@ import { LocalAuthGuard } from './guards/local-auth.guard';
 import { CurrentUser } from './current-user.decorator';
 import { UserDocument } from './users/models/users.schema';
 import { Response } from 'express';
+import { MessagePattern } from '@nestjs/microservices';
+import { JwtAuthGuard } from './guards/jwt-auth.guard';
 
 @Controller('auth')
 export class AuthController {
@@ -17,5 +19,11 @@ export class AuthController {
   ) {
     const jwt = await this.authService.login(user, response);
     response.send(jwt);
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @MessagePattern('authenticate')
+  async authenticate(){
+
   }
 }
